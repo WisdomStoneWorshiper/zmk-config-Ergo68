@@ -6,7 +6,7 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    default_transform: keymap_transform0 {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
         rows = <5>;
@@ -19,13 +19,13 @@
         >;
     };
 
+    // 4 = R0, 5 = R1, 6 = R2, 7 = R3, 8 = R4
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
 
         row-gpios
-            // 4 = R0, 5 = R1, 6 = R2, 7 = R3, 8 = R4
             = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
