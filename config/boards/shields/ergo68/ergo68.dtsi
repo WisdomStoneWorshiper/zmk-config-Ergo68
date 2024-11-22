@@ -1,6 +1,11 @@
 #include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your dtsi
 
 / {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+    };
+
     default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <14>;
@@ -20,7 +25,7 @@
         >;
     };
 
-    kscan0: kscan0 {
+    kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
         wakeup-source;
