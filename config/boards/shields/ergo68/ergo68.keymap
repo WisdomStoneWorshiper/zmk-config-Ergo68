@@ -20,11 +20,11 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  | DEL |               | CAPS|  N  |  M   |  ,  |  .  |  /  | SHFT |
 // | CTRL | WIN | ALT | SPC | SPC | SPC | ENT |               | ENT | SPC | SPC  | SPC | ALT | APP | CRRL |
                         bindings = <
-   &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4   &kp N5   &trans                 &kp N6    &kp N7     &kp N8    &kp N9   &kp N0    &kp BSPC  &trans
-   &kp GRAV  &kp Q     &kp W    &kp E    &kp R    &kp T    &kp LBKT     &kp RBKT  &kp Y     &kp U      &kp I     &kp O    &kp P     &kp BSLH
-   &kp TAB   &kp A     &kp S    &kp D    &kp F    &kp G    &kp MINUS    &kp EQUAL &kp H     &kp J      &kp K     &kp L    &kp SEMI  &kp SQT
-   &kp LSHFT &kp Z     &kp X    &kp C    &kp V    &kp B    &kp DEL      &kp CAPS  &kp N     &kp M      &kp COMMA &kp DOT  &kp FSLH  &kp RSHFT
-   &kp LCTRL &kp K_APP &kp LALT &kp BSPC &kp BSPC &kp BSPC &kp ENTER    &kp ENTER &kp BSPC  &kp BSPC   &kp BSPC  &kp RALT &kp K_APP &kp RCTRL
+   &kp ESC   &kp N1    &kp N2   &kp N3    &kp N4    &kp N5    &kp SPACE              &kp N6     &kp N7      &kp N8     &kp N9   &kp N0    &kp BSPC  &kp SPACE
+   &kp GRAV  &kp Q     &kp W    &kp E     &kp R     &kp T     &kp LBKT     &kp RBKT  &kp Y      &kp U       &kp I      &kp O    &kp P     &kp BSLH
+   &kp TAB   &kp A     &kp S    &kp D     &kp F     &kp G     &kp MINUS    &kp EQUAL &kp H      &kp J       &kp K      &kp L    &kp SEMI  &kp SQT
+   &kp LSHFT &kp Z     &kp X    &kp C     &kp V     &kp B     &kp DEL      &kp CAPS  &kp N      &kp M       &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+   &kp LCTRL &kp K_APP &kp LALT &kp SPACE &kp SPACE &kp SPACE &kp ENTER    &kp ENTER &kp SPACE  &kp SPACE   &kp SPACE  &kp RALT &kp K_APP &kp RCTRL
                         >;
                 };
         };
