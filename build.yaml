@@ -26,3 +26,5 @@ include:
     shield: ergo68_right
     # cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
     # artifact-name: ergo68_right_with_logging
+  - board: nice_nano_v2
+    shield: settings_reset
