@@ -1,27 +1,31 @@
 #include "layer_define.dtsi"
 
-/*
-This macro:
-  - change to the desired `bluetooth profile` (param 1)
-  - and disables all layers except `0` (default) - see `&to` documentation
-  - and activates the desired `base layer` (param 2)
-  - and subsequently toggles the FUN layer
+/ {
+  macros {
+    /*
+    This macro:
+    - change to the desired `bluetooth profile` (param 1)
+    - and disables all layers except `0` (default) - see `&to` documentation
+    - and activates the desired `base layer` (param 2)
+    - and subsequently toggles the FUN layer
 
-Params:
-  1. bluetooth profile to activate
-  2. base layer to activate
+    Params:
+    1. bluetooth profile to activate
+    2. base layer to activate
 
-Example:
-  `&cos 0 MAC`
-*/
-cos: change_os {
-  wait-ms = <0>;
-  tap-ms = <0>;
-  compatible = "zmk,behavior-macro-two-param";
-  #binding-cells = <2>;
-  bindings = <&macro_param_1to1>,
-    <&macro_press &bt BT_SEL MACRO_PLACEHOLDER>,
-    <&macro_param_2to1>,
-    <&macro_press &to MACRO_PLACEHOLDER>,
-    <&macro_press &tog FUN>;
+    Example:
+    `&cos 0 MAC`
+    */
+    cos: change_os {
+    wait-ms = <0>;
+    tap-ms = <0>;
+    compatible = "zmk,behavior-macro-two-param";
+    #binding-cells = <2>;
+    bindings = <&macro_param_1to1>,
+        <&macro_press &bt BT_SEL MACRO_PLACEHOLDER>,
+        <&macro_param_2to1>,
+        <&macro_press &to MACRO_PLACEHOLDER>,
+        <&macro_press &tog FUN>;
+    };
+  };
 };
