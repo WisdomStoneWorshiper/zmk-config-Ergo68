@@ -17,14 +17,29 @@
 // |  ESC |  1  |  2  |  3  |  4  |  5  |                           |  6  |  7   |  8  |  9  |  0  | BSPC |
 // |  `   |  Q  |  W  |  E  |  R  |  T  |  [  |               |  ]  |  Y  |  U   |  I  |  O  |  P  |  \   |
 // |  TAB |  A  |  S  |  D  |  F  |  G  |  -  |               |  =  |  H  |  J   |  K  |  L  |  ;  |  "   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  | DEL |               | CAPS|  N  |  M   |  ,  |  .  |  /  | SHFT |
-// | CTRL | WIN | ALT | SPC | SPC | SPC | ENT |               | ENT | SPC | SPC  | SPC | ALT | APP | CRRL |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  | DEL |               | CAPS|  N  |  M   |  ,  |  .  | UP  |  /   |
+// | LCTRL| WIN | ALT | HOME| END | SPC | ENT |               | ENT | SPC | RCTRL| mo 1| LEFT| DOWN| RIGHT|
                         bindings = <
    &kp ESC   &kp N1    &kp N2   &kp N3    &kp N4    &kp N5    &kp SPACE    &kp SPACE &kp N6     &kp N7      &kp N8     &kp N9   &kp N0    &kp BSPC 
    &kp GRAVE &kp Q     &kp W    &kp E     &kp R     &kp T     &kp LBKT     &kp RBKT  &kp Y      &kp U       &kp I      &kp O    &kp P     &kp BSLH
    &kp TAB   &kp A     &kp S    &kp D     &kp F     &kp G     &kp MINUS    &kp EQUAL &kp H      &kp J       &kp K      &kp L    &kp SEMI  &kp SQT
-   &kp LSHFT &kp Z     &kp X    &kp C     &kp V     &kp B     &kp DEL      &kp CAPS  &kp N      &kp M       &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-   &kp LCTRL &kp LGUI  &kp LALT &kp SPACE &kp SPACE &kp SPACE &kp ENTER    &kp ENTER &kp SPACE  &kp SPACE   &kp SPACE  &kp RALT &kp LGUI  &kp RCTRL
+   &kp LSHFT &kp Z     &kp X    &kp C     &kp V     &kp B     &kp DEL      &kp CAPS  &kp N      &kp M       &kp COMMA  &kp DOT  &kp UP    &kp FSLH
+   &kp LCTRL &kp LGUI  &kp LALT &kp HOME  &kp END   &kp SPACE &kp ENTER    &kp ENTER &kp SPACE  &kp RCTRL   &mo 1      &kp LEFT &kp DOWN  &kp RIGHT
+                        >;
+                };
+                lower_layer {
+// -----------------------------------------------------------------------------------------
+// |      |  F1 |  F2 |  F3 |  F4 |  F5 |                           |  F6 |   F7 |  F8 |  F9 | F10 |      |
+// |      |     |     |     |     |     | F11 |               | F12 |     |      | MUTE|VOLDN|VOLUP|      |
+// |      |     |     |     |     |     |     |               |     |     |      | PREV|  PP | NEXT|      |
+// |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
+// |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
+                        bindings = <
+   &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans         &trans  &kp F6  &kp F7  &kp F8     &kp F9       &kp F10      &trans 
+   &trans  &trans  &trans  &trans  &trans  &trans  &kp F11        &kp F12 &trans  &trans  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
+   &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &kp PREV   &kp C_PP     &kp C_NEXT   &trans
+   &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans     &trans       &trans       &trans
+   &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans     &trans       &trans       &trans
                         >;
                 };
         };
