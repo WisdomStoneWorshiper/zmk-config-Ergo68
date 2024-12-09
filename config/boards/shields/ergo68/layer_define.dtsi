@@ -1,0 +1,3 @@
+#define MAC 0
+#define FUN 1
+#define WIN 2

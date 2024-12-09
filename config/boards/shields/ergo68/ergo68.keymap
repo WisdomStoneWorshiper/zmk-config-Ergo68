@@ -7,8 +7,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <macro.dtsi>
 
 / {
+        combos {
+                compatible = "zmk,combos";
+                combo_bt_reset_all {
+                        timeout-ms = <50>;
+                        key-positions = <0 13 48>;
+                        bindings = <&bt BT_CLR_ALL>;
+                };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -18,16 +27,16 @@
 // |  `   |  Q  |  W  |  E  |  R  |  T  |  [  |               |  ]  |  Y  |  U   |  I  |  O  |  P  |  \   |
 // |  TAB |  A  |  S  |  D  |  F  |  G  |  -  |               |  =  |  H  |  J   |  K  |  L  |  ;  |  "   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  | DEL |               | CAPS|  N  |  M   |  ,  |  .  | UP  |  /   |
-// | LCTRL| WIN | ALT | HOME| END | SPC | ENT |               | ENT | SPC | RCTRL| mo 1| LEFT| DOWN| RIGHT|
+// | LCTRL| OPT | CMD | HOME| END | SPC | ENT |               | ENT | SPC | RCTRL| mo 1| LEFT| DOWN| RIGHT|
                         bindings = <
    &kp ESC   &kp N1    &kp N2   &kp N3    &kp N4    &kp N5    &kp SPACE    &kp SPACE &kp N6     &kp N7      &kp N8     &kp N9   &kp N0    &kp BSPC 
    &kp GRAVE &kp Q     &kp W    &kp E     &kp R     &kp T     &kp LBKT     &kp RBKT  &kp Y      &kp U       &kp I      &kp O    &kp P     &kp BSLH
    &kp TAB   &kp A     &kp S    &kp D     &kp F     &kp G     &kp MINUS    &kp EQUAL &kp H      &kp J       &kp K      &kp L    &kp SEMI  &kp SQT
    &kp LSHFT &kp Z     &kp X    &kp C     &kp V     &kp B     &kp DEL      &kp CAPS  &kp N      &kp M       &kp COMMA  &kp DOT  &kp UP    &kp FSLH
-   &kp LCTRL &kp LGUI  &kp LALT &kp HOME  &kp END   &kp SPACE &kp ENTER    &kp ENTER &kp SPACE  &kp RCTRL   &mo 1      &kp LEFT &kp DOWN  &kp RIGHT
+   &kp LCTRL &kp LALT  &kp LGUI &kp HOME  &kp END   &kp SPACE &kp ENTER    &kp ENTER &kp SPACE  &kp RCTRL   &mo FUN    &kp LEFT &kp DOWN  &kp RIGHT
                         >;
                 };
-                lower_layer {
+                function_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  F1 |  F2 |  F3 |  F4 |  F5 |                           |  F6 |   F7 |  F8 |  F9 | F10 |      |
 // |      |     |     |     |     |     | F11 |               | F12 |     |      | MUTE|VOLDN|VOLUP|      |
@@ -35,11 +44,26 @@
 // |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
 // |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
                         bindings = <
-   &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans         &trans  &kp F6  &kp F7  &kp F8     &kp F9       &kp F10      &trans 
-   &trans  &trans  &trans  &trans  &trans  &trans  &kp F11        &kp F12 &trans  &trans  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
-   &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &kp C_PREV &kp C_PP     &kp C_NEXT   &trans
-   &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans     &trans       &trans       &trans
-   &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans     &trans       &trans       &trans
+   &trans  &kp F1      &kp F2      &kp F3  &kp F4  &kp F5  &trans         &trans  &kp F6  &kp F7  &kp F8     &kp F9       &kp F10      &trans 
+   &trans  &cos 0 MAC  &cos 1 WIN  &trans  &trans  &trans  &kp F11        &kp F12 &trans  &trans  &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
+   &trans  &trans      &trans      &trans  &trans  &trans  &trans         &trans  &trans  &trans  &kp C_PREV &kp C_PP     &kp C_NEXT   &trans
+   &trans  &trans      &trans      &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans     &trans       &trans       &trans
+   &trans  &trans      &trans      &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans     &trans       &trans       &trans
+                        >;
+                };
+                windows_layer {
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |                           |     |      |     |     |     |      |
+// |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
+// |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
+// |      |     |     |     |     |     |     |               |     |     |      |     |     |     |      |
+// | LCTRL| WIN | ALT |     |     |     |     |               |     |     |      |     |     |     |      |
+                        bindings = <
+   &trans    &trans    &trans    &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans 
+   &trans    &trans    &trans    &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans
+   &trans    &trans    &trans    &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans
+   &trans    &trans    &trans    &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans
+   &kp LCTRL &kp LGUI  &kp LALT  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans
                         >;
                 };
         };
