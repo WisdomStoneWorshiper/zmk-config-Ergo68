@@ -34,9 +34,7 @@
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings = 
-        <&macro_press &bt BT_SEL 0>,
-        <&macro_press &to MAC>,
-        <&macro_press &tog FUN>;
+        <&macro_tap &bt BT_SEL 0 &to MAC &tog FUN>;
     };
 
     cwin: change_windows {
@@ -45,9 +43,7 @@
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings = 
-        <&macro_press &bt BT_SEL 1>,
-        <&macro_press &to WIN>,
-        <&macro_press &tog FUN>;
+        <&macro_tap &bt BT_SEL 1 &to WIN &tog FUN>;
     };
   };
 };
