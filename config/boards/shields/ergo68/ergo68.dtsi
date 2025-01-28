@@ -19,9 +19,6 @@
         >;
     };
 
-    &nice_view_spi {
-        cs-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
-    };
 
     // 4 = R0, 5 = R1, 6 = R2, 7 = R3, 8 = R4
     kscan0: kscan {

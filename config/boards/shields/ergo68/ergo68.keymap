@@ -9,7 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include "macro.dtsi"
 
-/ {
+/ 
+&nice_view_spi {
+        cs-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+};
+{
         combos {
                 compatible = "zmk,combos";
                 combo_bt_reset_all {

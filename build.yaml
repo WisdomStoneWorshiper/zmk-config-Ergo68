@@ -14,7 +14,7 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: ergo68_left
+    shield: ergo68_left nice_view_adapter
   - board: nice_nano_v2
     shield: ergo68_right
   - board: nice_nano_v2
