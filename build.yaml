@@ -16,6 +16,6 @@ include:
   - board: nice_nano_v2
     shield: ergo68_left nice_view_adapter
   - board: nice_nano_v2
-    shield: ergo68_right
+    shield: ergo68_right nice_view_adapter
   - board: nice_nano_v2
-    shield: settings_reset
+    shield: settings_reset nice_view_adapter
