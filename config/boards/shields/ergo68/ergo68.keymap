@@ -18,9 +18,6 @@
                         bindings = <&bt BT_CLR_ALL>;
                 };
         };
-        nice_view_spi {
-                cs-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
-        };
         keymap {
                 compatible = "zmk,keymap";
 
